@@ -1,0 +1,112 @@
+<!-- title: Request a demo · Zeporah | description: See both Zeporah experiences — the family app and the coordination desk — in a 30-minute walkthrough. -->
+  <main id="main">
+    <section class="cta demo">
+      <div class="wrap cta__inner">
+        <div class="cta__copy" data-variant="demo">
+          <p class="eyebrow eyebrow--light">Request a demo</p>
+          <h1>See Zeporah in 30 minutes.</h1>
+          <p>Tell us a little about your organization and when suits you. We'll confirm a time by email.</p>
+          <p class="demo__label">What we'll cover</p>
+          <ul class="cta__points">
+            <li>The family app, as a household sees it each day</li>
+            <li>The coordination desk: queue, approvals, and escalation</li>
+            <li>How requests are prepared, reviewed, approved, and recorded</li>
+            <li>Your questions, including security and implementation</li>
+          </ul>
+          <p class="demo__aside">Supporting a loved one? <a href="families.html#get-zeporah">Here's how families get Zeporah.</a></p>
+        </div>
+        <div class="cta__copy" data-variant="family" hidden>
+          <p class="eyebrow eyebrow--light">Suggest Zeporah</p>
+          <h1>Tell us about your care team.</h1>
+          <p>Share who's caring for your family, and we'll reach out to them about Zeporah. We won't contact you about anything else.</p>
+          <ul class="cta__points">
+            <li>Zeporah is always free for families</li>
+            <li>Please don't include medical details</li>
+          </ul>
+        </div>
+        <div class="cta__copy" data-variant="security" hidden>
+          <p class="eyebrow eyebrow--light">Security documentation</p>
+          <h1>Reviewing Zeporah for your organization?</h1>
+          <p>Tell us who you are and we'll share our security documentation and the current status of our HIPAA compliance program.</p>
+          <ul class="cta__points">
+            <li>Sharing controls and audit design</li>
+            <li>Compliance program status</li>
+            <li>A conversation with our team if useful</li>
+          </ul>
+        </div>
+
+        <form class="card interest" id="demo-form" action="/api/demo" method="post" novalidate>
+          <div class="interest__fields">
+            <div class="field">
+              <label for="f-name">Your name</label>
+              <input id="f-name" name="name" type="text" autocomplete="name" required />
+              <p class="field__error" id="f-name-err"></p>
+            </div>
+            <div class="field">
+              <label for="f-email">Work email</label>
+              <input id="f-email" name="email" type="email" autocomplete="email" required />
+              <p class="field__error" id="f-email-err"></p>
+            </div>
+            <div class="field">
+              <label for="f-org" data-org-label>Organization</label>
+              <input id="f-org" name="organization" type="text" autocomplete="organization" required />
+              <p class="field__error" id="f-org-err"></p>
+            </div>
+            <div class="field">
+              <label for="f-role">Your role</label>
+              <select id="f-role" name="role" required>
+                <option value="">Choose one</option>
+                <option>Executive leadership</option>
+                <option>Clinical leadership</option>
+                <option>Operations</option>
+                <option>Social work or care coordination</option>
+                <option>Bereavement or spiritual care</option>
+                <option>Family member or caregiver</option>
+                <option>Other</option>
+              </select>
+              <p class="field__error" id="f-role-err"></p>
+            </div>
+            <div class="field">
+              <label for="f-state">State</label>
+              <input id="f-state" name="state" type="text" autocomplete="address-level1" required />
+              <p class="field__error" id="f-state-err"></p>
+            </div>
+            <div class="field" data-org-only>
+              <label for="f-size">Average daily census <span class="field__opt">(optional)</span></label>
+              <select id="f-size" name="size">
+                <option value="">Prefer not to say</option>
+                <option>Under 50</option>
+                <option>50–150</option>
+                <option>150–400</option>
+                <option>Over 400</option>
+              </select>
+            </div>
+            <fieldset class="field field--full choices" data-org-only>
+              <legend>Best times to meet <span class="field__opt">(optional)</span></legend>
+              <label class="choice"><input type="checkbox" name="times" value="Mornings" /><span>Mornings</span></label>
+              <label class="choice"><input type="checkbox" name="times" value="Midday" /><span>Midday</span></label>
+              <label class="choice"><input type="checkbox" name="times" value="Afternoons" /><span>Afternoons</span></label>
+              <p class="field__hint" id="f-tz"></p>
+            </fieldset>
+            <div class="field field--full">
+              <label for="f-notes" data-notes-label>Anything you'd like us to focus on? <span class="field__opt">(optional)</span></label>
+              <textarea id="f-notes" name="notes" rows="4" maxlength="1500" aria-describedby="f-notes-hint"></textarea>
+              <p class="field__hint" id="f-notes-hint">Please don't include any patient or family information.</p>
+            </div>
+          </div>
+          <input type="hidden" name="timezone" />
+          <input type="hidden" name="interest" value="demo" />
+          <input class="interest__trap" type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true" />
+          <button class="btn btn--primary btn--lg interest__submit" type="submit" data-submit>Request a demo</button>
+          <p class="interest__status" role="status" aria-live="polite"></p>
+        </form>
+
+        <div class="card interest interest--done" id="demo-form-done" tabindex="-1" hidden>
+          <svg viewBox="0 0 32 32" aria-hidden="true"><use href="assets/mark.svg#sparrow" /></svg>
+          <h2>Thank you. Your request is in.</h2>
+          <p data-done-text>We'll email you to confirm a time for your demo.</p>
+          <p><a href="how-it-works.html">See how Zeporah works while you wait</a></p>
+        </div>
+      </div>
+    </section>
+  </main>

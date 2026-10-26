@@ -1,0 +1,35 @@
+        <div class="flow reveal" data-flow>
+          <div class="flow__progress" aria-hidden="true"><span></span></div>
+          <div class="flow__steps" role="group" aria-label="Workflow steps">
+            <button type="button" data-go="0" aria-current="step"><span>1</span>Asked</button>
+            <button type="button" data-go="1"><span>2</span>Prepared</button>
+            <button type="button" data-go="2"><span>3</span>Held</button>
+            <button type="button" data-go="3"><span>4</span>Approved</button>
+            <button type="button" data-go="4"><span>5</span>Recorded</button>
+          </div>
+          <div class="flow__views">
+            <div class="flow__view flow__view--family">
+              <p class="flow__label">What Elena sees</p>
+              <div class="flow__state" data-step="0"><h3>Send Mom's insurance documents to Northside Life</h3><p>Your request is with the care team. You don't need to do anything else right now.</p></div>
+              <div class="flow__state" data-step="1" hidden><h3>We're getting this ready</h3><p>Your care team is gathering only what Northside Life needs.</p></div>
+              <div class="flow__state" data-step="2" hidden><h3>Waiting on a consent review</h3><p>Before anything is shared, a reviewer confirms your mother's consent covers this request. We'll let you know as soon as it's done.</p></div>
+              <div class="flow__state" data-step="3" hidden><h3>Sent to Northside Life</h3><p>They can view these documents for 14 days. After that, access ends on its own.</p></div>
+              <div class="flow__state" data-step="4" hidden><h3>You can always see what was shared</h3><p>Insurance packet · Northside Life · until November 5.</p><p class="flow__action">Withdraw access</p></div>
+            </div>
+            <div class="flow__view flow__view--desk">
+              <p class="flow__label">What the care team sees</p>
+              <div class="flow__state" data-step="0"><p class="mono">REQ-2041 · Rivera</p><dl class="kv"><dt>Item</dt><dd>Insurance packet</dd><dt>Recipient</dt><dd>Northside Life · claims</dd><dt>Owner</dt><dd>Unassigned</dd><dt>State</dt><dd><span class="state">New</span></dd></dl></div>
+              <div class="flow__state" data-step="1" hidden><p class="mono">REQ-2041 · Packet assembled for review</p><dl class="kv"><dt>Scope</dt><dd>3 items · minimum necessary</dd><dt>Owner</dt><dd>M. Ortiz, reviewer</dd><dt>State</dt><dd><span class="state state--draft">Needs review</span></dd></dl></div>
+              <div class="flow__state" data-step="2" hidden><p class="mono">REQ-2041 · Policy check 9 / 10</p><dl class="kv"><dt>Consent</dt><dd>Pending review</dd><dt>Family notified</dt><dd>Yes, plain-language reason</dd><dt>State</dt><dd><span class="state state--hold">Hold</span></dd></dl></div>
+              <div class="flow__state" data-step="3" hidden><p class="mono">REQ-2041 · Policy check 10 / 10</p><dl class="kv"><dt>Approved by</dt><dd>M. Ortiz · 10:42 AM</dd><dt>Expiry</dt><dd>14 days</dd><dt>State</dt><dd><span class="state state--ok">Approved</span></dd></dl></div>
+              <div class="flow__state" data-step="4" hidden><p class="mono">AUDIT A-88213 · immutable</p><dl class="kv"><dt>Actor</dt><dd>M. Ortiz</dd><dt>Purpose</dt><dd>Insurance claim</dd><dt>Recipient</dt><dd>Northside Life</dd><dt>Scope</dt><dd>3 items · expires Nov 5</dd></dl></div>
+            </div>
+          </div>
+          <div class="flow__nav">
+            <p class="flow__caption" aria-live="polite">Step 1 of 5 · Asked</p>
+            <div>
+              <button type="button" class="btn btn--ghost" data-prev>Back</button>
+              <button type="button" class="btn btn--primary" data-next>Next step</button>
+            </div>
+          </div>
+        </div>
